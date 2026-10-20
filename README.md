@@ -16,12 +16,10 @@ Every placeholder is numbered so you can reference it directly (e.g. "fill in Pl
 ### Adding images
 
 1. Drop your image files directly in this folder (next to `index.html`), or in the `images/` folder — either works, just keep the path consistent.
-2. Find the matching `<div class="img-placeholder">...</div>` block (labeled `IMAGE PLACEHOLDER N`) in `index.html` and replace it with a real `<img>`, wrapped in a link to the same file so visitors can click it open full-size in a new tab:
+2. Find the matching `<div class="img-placeholder">...</div>` block (labeled `IMAGE PLACEHOLDER N`) in `index.html` and replace it with a real `<img>` tag, for example:
 
    ```html
-   <a href="images/poster_cu.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size image in a new tab">
-     <img src="images/poster_cu.png" alt="CU Boulder EMG research poster" loading="lazy" style="border-radius:10px;border:1px solid var(--color-border);cursor:zoom-in;">
-   </a>
+   <img src="images/poster_cu.png" alt="CU Boulder EMG research poster" loading="lazy">
    ```
 
 3. What each image placeholder is for:
