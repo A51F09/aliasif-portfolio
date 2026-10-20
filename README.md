@@ -4,28 +4,31 @@ Portfolio site for Ali Asif. Single static page (`index.html`), no build step, n
 
 ## 1. Filling in your content
 
-All placeholder text is wrapped in `[PLACEHOLDER ...]` and styled in italic gray so it's easy to spot.
+Every placeholder is numbered so you can reference it directly (e.g. "fill in Placeholder 8" or "here's the file for Image Placeholder 3"). There are two kinds:
+
+- **`[PLACEHOLDER N - ...]`** — text: bios, descriptions, dates, links, tech-stack badges, captions. Numbered 1–35, in the order they appear on the page.
+- **`[IMAGE PLACEHOLDER N - ...]`** — a photo/screenshot/poster slot shown as a dashed box. Numbered 1–11, separately from the text ones.
 
 1. Open `index.html` in any text editor.
-2. Press **Ctrl+F** and search for `[PLACEHOLDER` to jump through every spot that needs real content.
-3. Replace the bracketed text with your own copy. Delete the surrounding `[` `]` and the `placeholder` class won't matter once the text no longer looks like a placeholder — but you can also remove `class="placeholder"` from that element if you want normal (non-italic, non-gray) styling right away.
+2. Press **Ctrl+F** and search for `PLACEHOLDER` to jump through every spot that needs real content, or just look for the placeholder number you're working on.
+3. Replace the bracketed text with your own copy. You can also remove `class="placeholder"` from that element if you want normal (non-italic, non-gray) styling right away.
 
 ### Adding images
 
 1. Drop your image files directly in this folder (next to `index.html`), or in the `images/` folder — either works, just keep the path consistent.
-2. Find the matching `<div class="img-placeholder">...</div>` block in `index.html` and replace it with a real `<img>` tag, for example:
+2. Find the matching `<div class="img-placeholder">...</div>` block (labeled `IMAGE PLACEHOLDER N`) in `index.html` and replace it with a real `<img>` tag, for example:
 
    ```html
    <img src="poster_cu.png" alt="CU Boulder EMG research poster" loading="lazy">
    ```
 
-3. Suggested filenames (referenced in the placeholder text so they're easy to find):
-   - `poster_cu.png` — CU Boulder research poster
-   - `poster_quantum.png` — ACC quantum research poster
-   - `quantum_paper.pdf` — ACC quantum research paper (link to it, don't embed it)
-   - `athltc_1.png`, `athltc_2.png` — ATHLTC app screenshots
-   - `Ali_Asif_Resume.pdf` — your resume (the Resume section already links to this filename)
-   - Gallery section images — any names you like, just update the `src` in each placeholder block
+3. What each image placeholder is for:
+   - **Image Placeholder 1** — `poster_cu.png`, CU Boulder research poster
+   - **Image Placeholder 2** — `poster_quantum.png`, ACC quantum research poster
+   - **Image Placeholder 3 / 4** — `athltc_1.png`, `athltc_2.png`, ATHLTC app screenshots
+   - **Image Placeholder 5** — second project's screenshot
+   - **Image Placeholder 6–11** — the six Gallery photos (any filenames you like)
+   - `quantum_paper.pdf` and `Ali_Asif_Resume.pdf` are linked as text (Placeholder 6 and Placeholder 34), not image boxes — just drop the files in and the links will work once named correctly.
 
 ### Showing/hiding the second project card
 
