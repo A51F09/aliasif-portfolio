@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Asif</title>
+<meta name="description" content="Portfolio of Ali Asif — research, projects, and experience in computer engineering and AI/ML.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #ffffff;
+    --color-bg-alt: #f5f7fa;
+    --color-text: #1a1f2b;
+    --color-text-muted: #4b5563;
+    --color-heading: #0a2540;
+    --color-navy: #0a2540;
+    --color-navy-light: #14375e;
+    --color-accent: #2563eb;
+    --color-border: #e2e6ec;
+    --color-card-bg: #ffffff;
+    --color-placeholder: #999999;
+    --color-placeholder-bg: #f0f1f3;
+    --color-placeholder-border: #c7cbd1;
+    --shadow-card: 0 1px 3px rgba(10, 37, 64, 0.08), 0 1px 2px rgba(10, 37, 64, 0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --color-bg: #0b0f16;
+      --color-bg-alt: #121823;
+      --color-text: #e6e9ef;
+      --color-text-muted: #a3acbc;
+      --color-heading: #e6e9ef;
+      --color-navy: #0d2a47;
+      --color-navy-light: #1b3f66;
+      --color-accent: #5b9dff;
+      --color-border: #232c3a;
+      --color-card-bg: #121823;
+      --color-placeholder: #8a93a3;
+      --color-placeholder-bg: #16202e;
+      --color-placeholder-border: #2c3747;
+      --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --color-bg: #0b0f16;
+    --color-bg-alt: #121823;
+    --color-text: #e6e9ef;
+    --color-text-muted: #a3acbc;
+    --color-heading: #e6e9ef;
+    --color-navy: #0d2a47;
+    --color-navy-light: #1b3f66;
+    --color-accent: #5b9dff;
+    --color-border: #232c3a;
+    --color-card-bg: #121823;
+    --color-placeholder: #8a93a3;
+    --color-placeholder-bg: #16202e;
+    --color-placeholder-border: #2c3747;
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: var(--color-accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-navy);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  nav.site-nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    gap: 8px;
+  }
+
+  nav.site-nav .nav-brand {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  nav.site-nav .nav-links {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 10px 0;
+  }
+
+  nav.site-nav .nav-links::-webkit-scrollbar { display: none; }
+
+  nav.site-nav .nav-links a {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.88rem;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  nav.site-nav .nav-links a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    text-decoration: none;
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero {
+    background: linear-gradient(160deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+    color: #fff;
+    padding: 64px 0 56px;
+    text-align: center;
+  }
+
+  header.hero h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  header.hero .tagline {
+    margin: 0 0 24px;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255,255,255,0.85);
+  }
+
+  .hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  .hero-links a:hover {
+    background: rgba(255,255,255,0.2);
+    text-decoration: none;
+  }
+
+  .hero-links svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 28px;
+    color: var(--color-heading);
+  }
+
+  section > .wrap > p.section-intro {
+    color: var(--color-text-muted);
+    max-width: 680px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .bio {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    max-width: 700px;
+  }
+
+  /* ---------- CARDS ---------- */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  article.card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  article.card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--color-heading);
+  }
+
+  article.card .card-subtitle {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  article.card .card-role {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  article.card p { margin: 0; color: var(--color-text-muted); }
+
+  .card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .screenshot-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .screenshot-row .img-placeholder { flex: 1 1 140px; aspect-ratio: 9/16; }
+
+  /* toggle for optional project card - add/remove this class to show or hide */
+  article.card.project-hidden { display: none; }
+
+  /* ---------- PLACEHOLDER TEXT ---------- */
+  .placeholder {
+    font-style: italic;
+    color: var(--color-placeholder);
+  }
+
+  /* ---------- PLACEHOLDER IMAGE BOX ---------- */
+  .img-placeholder {
+    background: var(--color-placeholder-bg);
+    border: 2px dashed var(--color-placeholder-border);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-placeholder);
+    font-size: 0.85rem;
+    font-style: italic;
+    text-align: center;
+    padding: 24px 12px;
+    min-height: 160px;
+  }
+
+  .img-placeholder svg { width: 28px; height: 28px; opacity: 0.7; }
+
+  /* ---------- EXPERIENCE / LEADERSHIP (list style) ---------- */
+  .timeline-item {
+    padding: 18px 0;
+    border-top: 1px solid var(--color-border);
+  }
+  .timeline-item:first-child { border-top: none; padding-top: 0; }
+
+  .timeline-item h3 {
+    margin: 0 0 2px;
+    font-size: 1.05rem;
+    color: var(--color-heading);
+  }
+
+  .timeline-meta {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .timeline-item p { margin: 0; color: var(--color-text-muted); }
+
+  /* ---------- SKILLS ---------- */
+  .skills-group { margin-bottom: 20px; }
+  .skills-group h3 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    margin: 0 0 10px;
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  figure.gallery-item { margin: 0; }
+  figure.gallery-item .img-placeholder { min-height: 140px; }
+  figure.gallery-item figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    text-align: center;
+  }
+
+  /* ---------- RESUME ---------- */
+  .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .resume-btn:hover { opacity: 0.9; text-decoration: none; }
+
+  /* ---------- FOOTER ---------- */
+  footer.site-footer {
+    background: var(--color-navy);
+    color: rgba(255,255,255,0.75);
+    padding: 36px 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  footer.site-footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+
+  footer.site-footer .footer-links a { color: #fff; font-weight: 500; }
+
+  footer.site-footer .footer-tagline {
+    margin-top: 10px;
+    font-style: italic;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 600px) {
+    section { padding: 40px 0; }
+    header.hero { padding: 48px 0 40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="wrap">
+    <span class="nav-brand">Ali Asif</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#skills">Skills</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#resume">Resume</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Ali Asif</h1>
+    <p class="tagline placeholder">[PLACEHOLDER - Write your own one-liner, e.g. "Aspiring Computer Engineer | Researcher | Builder"]</p>
+    <div class="hero-links">
+      <a href="[PLACEHOLDER - your GitHub profile URL]" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a href="[PLACEHOLDER - your LinkedIn URL, or remove if none]" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M0 1.15C0 .51.52 0 1.17 0h13.66C15.48 0 16 .51 16 1.15v13.7c0 .64-.52 1.15-1.17 1.15H1.17C.52 16 0 15.49 0 14.85V1.15zM4.74 13.44V6.17H2.4v7.27h2.34zM3.57 5.18c.82 0 1.33-.54 1.33-1.22-.01-.69-.51-1.22-1.31-1.22-.8 0-1.33.53-1.33 1.22 0 .68.51 1.22 1.3 1.22h.01zM6.98 13.44h2.34V9.4c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.63v3.88h2.34V9.28c0-2.16-1.15-3.17-2.69-3.17-1.24 0-1.79.69-2.1 1.17h.02V6.17H6.98c.03.73 0 7.27 0 7.27z"/></svg>
+        LinkedIn
+      </a>
+      <a href="mailto:[PLACEHOLDER - your preferred contact email]" aria-label="Send email">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M1.5 3h13A1.5 1.5 0 0 1 16 4.5v7A1.5 1.5 0 0 1 14.5 13h-13A1.5 1.5 0 0 1 0 11.5v-7A1.5 1.5 0 0 1 1.5 3zm0 1v.217l6.5 4.33 6.5-4.33V4h-13zm13 1.383-5.927 3.95a1 1 0 0 1-1.146 0L1.5 5.383V11.5h13V5.383z"/></svg>
+        Email
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+    <div class="wrap">
+      <h2>About Me</h2>
+      <p class="bio placeholder">[PLACEHOLDER - Write a short bio (3-5 sentences). Suggested talking points: Pakistani-American from Colorado, senior at Colorado Early College Castle Rock, pursuing Computer Engineering, interested in AI/ML hardware, graduating with Associate's degree from ACC alongside HS diploma, 23 college courses completed]</p>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap">
+      <h2>Research</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <h3>Distinct Leg Muscle Activation Patterns Across Body Lean Directions</h3>
+          <p class="card-subtitle">University of Colorado Boulder — STEM Research Experience 2026</p>
+          <p class="placeholder">[PLACEHOLDER - 2-3 sentences about studying EMG muscle activation patterns using Python in Google Colab, presenting at CU Boulder symposium]</p>
+          <div class="img-placeholder" role="img" aria-label="Research poster placeholder for CU Boulder EMG research">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            [PLACEHOLDER IMAGE - Upload your research poster here as poster_cu.png]
+          </div>
+          <div class="card-links">
+            <a href="https://scholar.colorado.edu/concern/presentations/fx719p38s" target="_blank" rel="noopener noreferrer">View Publication →</a>
+            <a href="[PLACEHOLDER - Add repo URL if public, or remove this link]" target="_blank" rel="noopener noreferrer">GitHub Repo →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Comparing NISQ-Era Quantum Chip Architectures in Noisy Simulation of Grover's Algorithm</h3>
+          <p class="card-subtitle">Arapahoe Community College — Independent Research</p>
+          <p class="placeholder">[PLACEHOLDER - 2-3 sentences about comparing quantum chip architectures using Qiskit, simulating noise in Grover's Algorithm, presenting at ACC Spring 2026 symposium]</p>
+          <div class="img-placeholder" role="img" aria-label="Research poster placeholder for ACC quantum computing research">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            [PLACEHOLDER IMAGE - Upload your research poster here as poster_quantum.png]
+          </div>
+          <div class="card-links">
+            <a href="[PLACEHOLDER - Upload final paper as quantum_paper.pdf when complete]" target="_blank" rel="noopener noreferrer">Read Paper (PDF) →</a>
+            <a href="[PLACEHOLDER - Add repo URL if public, or remove this link]" target="_blank" rel="noopener noreferrer">GitHub Repo →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="card-grid">
+
+        <article class="card">
+          <h3>ATHLTC</h3>
+          <p class="card-role">Co-founder &amp; Lead Developer</p>
+          <p class="placeholder">[PLACEHOLDER - 2-3 sentences about the fitness app. Suggested talking points: progressive overload tracking, Ramadan Fasting mode, AI integration via API, social features, team of three developers]</p>
+          <div class="badges">
+            <span class="badge placeholder">[PLACEHOLDER - tech stack, e.g. React Native]</span>
+            <span class="badge placeholder">[PLACEHOLDER]</span>
+            <span class="badge placeholder">[PLACEHOLDER]</span>
+          </div>
+          <div class="screenshot-row">
+            <div class="img-placeholder" role="img" aria-label="ATHLTC screenshot placeholder 1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+              athltc_1.png
+            </div>
+            <div class="img-placeholder" role="img" aria-label="ATHLTC screenshot placeholder 2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+              athltc_2.png
+            </div>
+          </div>
+          <div class="card-links">
+            <a href="[PLACEHOLDER - Add repo URL]" target="_blank" rel="noopener noreferrer">GitHub Repo →</a>
+          </div>
+        </article>
+
+        <article class="card" id="project-card-b">
+          <h3 class="placeholder">[PLACEHOLDER - Add another project title, e.g. AI Daytrading Bot, personal CLI tool, etc.]</h3>
+          <p class="card-role placeholder">[PLACEHOLDER - role]</p>
+          <p class="placeholder">[PLACEHOLDER - 2-3 sentences]</p>
+          <div class="badges">
+            <span class="badge placeholder">[PLACEHOLDER - tech stack]</span>
+          </div>
+          <div class="img-placeholder" role="img" aria-label="Second project screenshot placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            [PLACEHOLDER IMAGE]
+          </div>
+          <div class="card-links">
+            <a href="[PLACEHOLDER]" target="_blank" rel="noopener noreferrer">GitHub Repo →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
+
+      <div class="timeline-item">
+        <h3>Sensei (Coding Instructor), Code Ninjas Castle Rock</h3>
+        <p class="timeline-meta">Promoted to Camp Director &middot; <span class="placeholder">[PLACEHOLDER - Add start and end dates, e.g. "Aug 2025 - Sept 2026"]</span></p>
+        <p class="placeholder">[PLACEHOLDER - 2-3 sentences. Suggested talking points: coached hundreds of kids ages 5-14 in game dev with block coding, JavaScript, and robotics. Taught 4 summer camps and 2 winter camps. Promoted to Camp Director within tenure.]</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="placeholder">[PLACEHOLDER - Additional Experience]</h3>
+        <p class="placeholder">[PLACEHOLDER - Add any other work/internship experience, or remove this block. Note: Ali was accepted into the Lockheed Martin internship (13 out of 2,500 applicants) but couldn't attend due to scheduling - could mention as a notable acceptance if desired]</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="wrap">
+      <h2>Leadership &amp; Community</h2>
+
+      <div class="timeline-item">
+        <h3>Student Body President — CEC Castle Rock</h3>
+        <p class="timeline-meta">Grades 11-12 (VP then President)</p>
+        <p class="placeholder">[PLACEHOLDER - 1-2 sentences. Suggested talking points: initiated monthly town halls for 400+ students, led school's most successful event turnout to-date]</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>NHS Vice President</h3>
+        <p class="timeline-meta">Grade 12</p>
+        <p class="placeholder">[PLACEHOLDER - 1-2 sentences. Suggested talking points: coordinating volunteer initiatives with local pet shelters, organizing book and food drives for 30+ NHS members]</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Teen Court — Student Leadership Board Member</h3>
+        <p class="timeline-meta">Grades 9-12</p>
+        <p class="placeholder">[PLACEHOLDER - 1-2 sentences. Suggested talking points: 42 hours on once-monthly teen-led juries, sentencing juvenile misdemeanor offenders on restorative justice principles, one of 8 SLB members selected from 90 jurors]</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>TCF Colorado Chapter</h3>
+        <p class="timeline-meta">Grades 10-11</p>
+        <p class="placeholder">[PLACEHOLDER - 1-2 sentences. Suggested talking points: peer-to-peer fundraising to build schools for underprivileged children in Pakistan, helped organize annual fundraising gala]</p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Muslim Youth for Positive Impact</h3>
+        <p class="timeline-meta">Grade 9</p>
+        <p class="placeholder">[PLACEHOLDER - 1-2 sentences. Suggested talking points: ran activities for 50+ Arab refugee children, assisted families adjusting to life in Colorado, organized Ramadan food drives]</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills &amp; Certifications</h2>
+
+      <div class="skills-group">
+        <h3>Programming</h3>
+        <div class="badges">
+          <span class="badge">Python</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">C++</span>
+          <span class="badge">HTML/CSS</span>
+          <span class="badge">Qiskit</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3>Tools</h3>
+        <div class="badges">
+          <span class="badge">Google Colab</span>
+          <span class="badge">Jupyter Notebooks</span>
+          <span class="badge">GitHub</span>
+          <span class="badge">VS Code</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3>Certifications</h3>
+        <div class="badges">
+          <span class="badge">Adobe Certified Professional (Photoshop &amp; Illustrator)</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <h3>Additional</h3>
+        <div class="badges">
+          <span class="badge placeholder">[PLACEHOLDER - Add any other languages, frameworks, tools, or certs you want listed. e.g. React Native, Firebase, SQL, Lua, Java, C#, FAA Part 107 drone license if you have it, etc.]</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="wrap">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+
+        <figure class="gallery-item">
+          <div class="img-placeholder" role="img" aria-label="Gallery photo placeholder 1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            Photo coming soon
+          </div>
+          <figcaption class="placeholder">[PLACEHOLDER - e.g. CU Boulder poster presentation photo]</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="img-placeholder" role="img" aria-label="Gallery photo placeholder 2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            Photo coming soon
+          </div>
+          <figcaption class="placeholder">[PLACEHOLDER - e.g. ACC symposium presentation photo]</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="img-placeholder" role="img" aria-label="Gallery photo placeholder 3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            Photo coming soon
+          </div>
+          <figcaption class="placeholder">[PLACEHOLDER - e.g. Student Government event photo]</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="img-placeholder" role="img" aria-label="Gallery photo placeholder 4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            Photo coming soon
+          </div>
+          <figcaption class="placeholder">[PLACEHOLDER - e.g. Code Ninjas camp photo]</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="img-placeholder" role="img" aria-label="Gallery photo placeholder 5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            Photo coming soon
+          </div>
+          <figcaption class="placeholder">[PLACEHOLDER]</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="img-placeholder" role="img" aria-label="Gallery photo placeholder 6">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
+            Photo coming soon
+          </div>
+          <figcaption class="placeholder">[PLACEHOLDER]</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <div class="wrap">
+      <h2>Resume</h2>
+      <a class="resume-btn" href="Ali_Asif_Resume.pdf" download>
+        <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 11.5 4 7.5l1.06-1.06L7.25 8.6V1h1.5v7.6l2.19-2.16L12 7.5 8 11.5zM2 13.5h12V15H2v-1.5z"/></svg>
+        Download Resume
+      </a>
+      <p class="placeholder" style="margin-top:12px;">[PLACEHOLDER - Upload resume as Ali_Asif_Resume.pdf in this directory]</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="mailto:[PLACEHOLDER - your preferred contact email]">Email</a>
+      <a href="[PLACEHOLDER - GitHub profile URL]" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="[PLACEHOLDER - LinkedIn URL or remove]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+    <div>&copy; Ali Asif 2026</div>
+    <div class="footer-tagline placeholder">[PLACEHOLDER - Optional, e.g. "Built with caffeine and ambition" or leave blank]</div>
+  </div>
+</footer>
+
+</body>
+</html>
