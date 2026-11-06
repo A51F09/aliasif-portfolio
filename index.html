@@ -406,12 +406,13 @@
 
   /* ---------- POSTER GALLERY (horizontal scroll strip) ---------- */
   .poster-gallery-label {
+    display: block;
     font-size: 0.78rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     color: var(--color-text-muted);
-    margin: 2px 0 0;
+    margin: 2px 0 4px;
   }
 
   .poster-gallery {
@@ -433,14 +434,15 @@
     scroll-snap-align: start;
   }
 
-  .gallery-video-item {
+  .gallery-group-item {
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
   }
 
-  .gallery-video-tag {
-    margin: 2px 0 4px;
+  .gallery-group-row {
+    display: flex;
+    gap: 10px;
   }
 
   .poster-gallery video {
@@ -606,13 +608,17 @@
           <h3>Comparing NISQ-Era Quantum Chip Architectures in Noisy Simulation of Grover's Algorithm</h3>
           <p class="card-subtitle">Arapahoe Community College — Independent Research</p>
           <p>This study investigates how noise in Noisy Intermediate-Scale Quantum (NISQ) systems affects the performance of Grover's algorithm, and whether that effect differs across qubit architectures. Using Qiskit Aer on Google Colab, a 3-qubit Grover's circuit was run across noiseless, trapped-ion, and neutral-atom simulation environments over five trials each. The trapped-ion model stayed within about 1% of the noiseless baseline, while the neutral-atom model's success rate dropped to roughly 40%, showing that noise resilience depends heavily on the underlying hardware.</p>
-          <p class="poster-gallery-label">Gallery</p>
           <div class="poster-gallery">
-            <img class="zoomable" data-group="acc-quantum" src="images/poster_quantum.png" alt="Research poster: How Noise Affects Quantum Computing - Grover's Algorithm in NISQ Systems" loading="lazy">
-            <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_1.png" alt="Ali Asif standing beside the quantum computing research poster" loading="lazy">
-            <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_2.png" alt="Ali Asif discussing the research with attendees at the symposium" loading="lazy">
-            <div class="gallery-video-item">
-              <span class="poster-gallery-label gallery-video-tag">Video</span>
+            <div class="gallery-group-item">
+              <span class="poster-gallery-label">Gallery</span>
+              <div class="gallery-group-row">
+                <img class="zoomable" data-group="acc-quantum" src="images/poster_quantum.png" alt="Research poster: How Noise Affects Quantum Computing - Grover's Algorithm in NISQ Systems" loading="lazy">
+                <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_1.png" alt="Ali Asif standing beside the quantum computing research poster" loading="lazy">
+                <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_2.png" alt="Ali Asif discussing the research with attendees at the symposium" loading="lazy">
+              </div>
+            </div>
+            <div class="gallery-group-item">
+              <span class="poster-gallery-label">Video</span>
               <video class="gallery-video" src="images/acc_poster_pitch.mp4" poster="images/acc_poster_pitch_poster.jpg" controls preload="metadata" playsinline></video>
             </div>
           </div>
