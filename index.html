@@ -209,6 +209,11 @@
     gap: 20px;
   }
 
+  .card-grid.stacked {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
   article.card {
     background: var(--color-card-bg);
     border: 1px solid var(--color-border);
@@ -566,7 +571,7 @@
   <section id="research">
     <div class="wrap">
       <h2>Research</h2>
-      <div class="card-grid">
+      <div class="card-grid stacked">
 
         <article class="card">
           <h3>Distinct Leg Muscle Activation Patterns Across Body Lean Directions</h3>
