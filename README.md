@@ -26,6 +26,18 @@ Every placeholder is numbered so you can reference it directly (e.g. "fill in Pl
 
    The lightbox itself (markup, CSS, and a small vanilla-JS script) is already wired up at the bottom of `index.html` — any `<img class="zoomable">` anywhere on the page gets the click-to-enlarge behavior automatically, no extra setup needed per image.
 
+   To make a **scrollable mini-gallery** out of several images (like the CU Boulder research card has), give each image the same `data-group="some-name"` attribute. The lightbox will then show prev/next arrows and a counter so visitors can page through that whole set without closing it:
+
+   ```html
+   <p class="poster-gallery-label">Gallery</p>
+   <div class="poster-gallery">
+     <img class="zoomable" data-group="my-group" src="images/photo1.png" alt="..." loading="lazy">
+     <img class="zoomable" data-group="my-group" src="images/photo2.png" alt="..." loading="lazy">
+   </div>
+   ```
+
+   The `poster-gallery` wrapper makes the row horizontally scrollable with its own thumbnails; the `data-group` value just needs to match across the images you want grouped together (the quantum research card doesn't use this yet — it's still a single image).
+
 3. What each image placeholder is for:
    - **Image Placeholder 1** (already filled) — CU Boulder research poster
    - **Image Placeholder 2** (already filled) — ACC quantum research poster

@@ -399,6 +399,34 @@
     header.hero { padding: 48px 0 40px; }
   }
 
+  /* ---------- POSTER GALLERY (horizontal scroll strip) ---------- */
+  .poster-gallery-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    margin: 2px 0 0;
+  }
+
+  .poster-gallery {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+
+  .poster-gallery img {
+    flex: 0 0 auto;
+    height: 150px;
+    width: auto;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    scroll-snap-align: start;
+  }
+
   /* ---------- LIGHTBOX ---------- */
   img.zoomable { cursor: zoom-in; }
 
@@ -442,6 +470,44 @@
   }
 
   .lightbox-close:hover { background: rgba(255, 255, 255, 0.2); }
+
+  .lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+  }
+
+  .lightbox-nav:hover { background: rgba(255, 255, 255, 0.2); }
+  .lightbox-nav[hidden] { display: none; }
+  .lightbox-prev { left: 16px; }
+  .lightbox-next { right: 16px; }
+
+  .lightbox-counter {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+
+  .lightbox-counter[hidden] { display: none; }
 </style>
 </head>
 <body>
@@ -496,7 +562,13 @@
           <h3>Distinct Leg Muscle Activation Patterns Across Body Lean Directions</h3>
           <p class="card-subtitle">University of Colorado Boulder — STEM Research Experience 2026</p>
           <p>A unique study bridging neurophysiology and computer science, as well as exposure to Machine Learning. EMG signals in the Tibialis Anterior and Gastrocnemius muscles were recorded as participants leaned in various directions. After exporting the activity, Python was used in Jupyter to interpret the signals and calculate which muscle activated more during the leans.</p>
-          <img class="zoomable" src="images/poster_cu.png" alt="Research poster: Distinct Leg Muscle Activation Patterns Across Body Lean Directions" loading="lazy" style="border-radius:10px;border:1px solid var(--color-border);">
+          <p class="poster-gallery-label">Gallery</p>
+          <div class="poster-gallery">
+            <img class="zoomable" data-group="cu-boulder" src="images/poster_cu.png" alt="Research poster: Distinct Leg Muscle Activation Patterns Across Body Lean Directions" loading="lazy">
+            <img class="zoomable" data-group="cu-boulder" src="images/cu_gallery_1.png" alt="Ali Asif with research team, holding award certificates at the symposium" loading="lazy">
+            <img class="zoomable" data-group="cu-boulder" src="images/cu_gallery_2.png" alt="Ali Asif presenting the research poster to a visitor" loading="lazy">
+            <img class="zoomable" data-group="cu-boulder" src="images/cu_gallery_3.png" alt="Ali Asif with the full research team group photo" loading="lazy">
+          </div>
           <div class="card-links">
             <a href="https://scholar.colorado.edu/concern/presentations/fx719p38s" target="_blank" rel="noopener noreferrer">View Publication →</a>
             <a href="https://github.com/A51F09/EMG-python-study" target="_blank" rel="noopener noreferrer">GitHub Repo →</a>
@@ -706,7 +778,10 @@
 
 <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image">
   <button class="lightbox-close" id="lightbox-close" aria-label="Close enlarged image">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image" hidden>&#8249;</button>
   <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image" hidden>&#8250;</button>
+  <span class="lightbox-counter" id="lightbox-counter" hidden></span>
 </div>
 
 <script>
@@ -714,10 +789,40 @@
     var overlay = document.getElementById('lightbox');
     var img = document.getElementById('lightbox-img');
     var closeBtn = document.getElementById('lightbox-close');
+    var prevBtn = document.getElementById('lightbox-prev');
+    var nextBtn = document.getElementById('lightbox-next');
+    var counter = document.getElementById('lightbox-counter');
 
-    function openLightbox(src, alt) {
-      img.src = src;
-      img.alt = alt || '';
+    var currentGroup = [];
+    var currentIndex = 0;
+
+    function allZoomables() {
+      return Array.prototype.slice.call(document.querySelectorAll('img.zoomable'));
+    }
+
+    function groupFor(el) {
+      var groupName = el.getAttribute('data-group');
+      if (!groupName) return [el];
+      return allZoomables().filter(function (other) {
+        return other.getAttribute('data-group') === groupName;
+      });
+    }
+
+    function render() {
+      var el = currentGroup[currentIndex];
+      img.src = el.src;
+      img.alt = el.alt || '';
+      var multi = currentGroup.length > 1;
+      prevBtn.hidden = !multi;
+      nextBtn.hidden = !multi;
+      counter.hidden = !multi;
+      if (multi) counter.textContent = (currentIndex + 1) + ' / ' + currentGroup.length;
+    }
+
+    function openLightbox(el) {
+      currentGroup = groupFor(el);
+      currentIndex = currentGroup.indexOf(el);
+      render();
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
@@ -728,18 +833,33 @@
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('img.zoomable').forEach(function (el) {
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + currentGroup.length) % currentGroup.length;
+      render();
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % currentGroup.length;
+      render();
+    }
+
+    allZoomables().forEach(function (el) {
       el.addEventListener('click', function () {
-        openLightbox(el.src, el.alt);
+        openLightbox(el);
       });
     });
 
     closeBtn.addEventListener('click', closeLightbox);
+    prevBtn.addEventListener('click', showPrev);
+    nextBtn.addEventListener('click', showNext);
     overlay.addEventListener('click', function (e) {
       if (e.target === overlay) closeLightbox();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('open')) closeLightbox();
+      if (!overlay.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
     });
   })();
 </script>
