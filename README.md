@@ -15,12 +15,14 @@ Every placeholder is numbered so you can reference it directly (e.g. "fill in Pl
 
 ### Adding images
 
-1. Drop your image files directly in this folder (next to `index.html`), or in the `images/` folder — either works, just keep the path consistent.
-2. Find the matching `<div class="img-placeholder">...</div>` block (labeled `IMAGE PLACEHOLDER N`) in `index.html` and replace it with a real `<img>` tag, for example:
+1. Drop your image files directly in this folder (next to `index.html`), or in the `images/` folder — either works, just keep the path consistent. Prefer `.png` or `.jpg` over `.webp` for anything important — more universally supported.
+2. Find the matching `<div class="img-placeholder">...</div>` block (labeled `IMAGE PLACEHOLDER N`) in `index.html` and replace it with a real `<img>` tag. Add `class="zoomable"` so clicking the image opens it full-size in an in-page lightbox (not a new tab):
 
    ```html
-   <img src="images/poster_cu.png" alt="CU Boulder EMG research poster" loading="lazy">
+   <img class="zoomable" src="images/poster_cu.png" alt="CU Boulder EMG research poster" loading="lazy">
    ```
+
+   The lightbox itself (markup, CSS, and a small vanilla-JS script) is already wired up at the bottom of `index.html` — any `<img class="zoomable">` anywhere on the page gets the click-to-enlarge behavior automatically, no extra setup needed per image.
 
 3. What each image placeholder is for:
    - **Image Placeholder 1** — `poster_cu.png`, CU Boulder research poster
