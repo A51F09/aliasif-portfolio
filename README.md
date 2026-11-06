@@ -6,7 +6,7 @@ Portfolio site for Ali Asif. Single static page (`index.html`), no build step, n
 
 Every placeholder is numbered so you can reference it directly (e.g. "fill in Placeholder 8" or "here's the file for Image Placeholder 3"). There are two kinds:
 
-- **`[PLACEHOLDER N - ...]`** — text: bios, descriptions, dates, links, tech-stack badges, captions. Numbered 1–35, in the order they appear on the page.
+- **`[PLACEHOLDER N - ...]`** — text: bios, descriptions, dates, links, tech-stack badges, captions. Numbered 1–33, in the order they appear on the page (a few numbers are already filled in and won't show as brackets anymore).
 - **`[IMAGE PLACEHOLDER N - ...]`** — a photo/screenshot/poster slot shown as a dashed box. Numbered 1–11, separately from the text ones.
 
 1. Open `index.html` in any text editor.
@@ -30,7 +30,7 @@ Every placeholder is numbered so you can reference it directly (e.g. "fill in Pl
    - **Image Placeholder 3 / 4** — `athltc_1.png`, `athltc_2.png`, ATHLTC app screenshots
    - **Image Placeholder 5** — second project's screenshot
    - **Image Placeholder 6–11** — the six Gallery photos (any filenames you like)
-   - `quantum_paper.pdf` and `Ali_Asif_Resume.pdf` are linked as text (Placeholder 6 and Placeholder 34), not image boxes — just drop the files in and the links will work once named correctly.
+   - `Ali_Asif_Resume.pdf` is linked as text (Placeholder 32), not an image box — just drop the file in and the link will work once named correctly.
 
 ### Showing/hiding the second project card
 
