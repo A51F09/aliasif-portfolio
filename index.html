@@ -416,6 +416,7 @@
 
   .poster-gallery {
     display: flex;
+    align-items: flex-end;
     gap: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
@@ -432,8 +433,18 @@
     scroll-snap-align: start;
   }
 
-  .poster-gallery video {
+  .gallery-video-item {
+    display: flex;
+    flex-direction: column;
     flex: 0 0 auto;
+  }
+
+  .gallery-video-tag {
+    margin: 2px 0 4px;
+  }
+
+  .poster-gallery video {
+    display: block;
     height: 150px;
     width: 84px;
     border-radius: 8px;
@@ -600,7 +611,10 @@
             <img class="zoomable" data-group="acc-quantum" src="images/poster_quantum.png" alt="Research poster: How Noise Affects Quantum Computing - Grover's Algorithm in NISQ Systems" loading="lazy">
             <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_1.png" alt="Ali Asif standing beside the quantum computing research poster" loading="lazy">
             <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_2.png" alt="Ali Asif discussing the research with attendees at the symposium" loading="lazy">
-            <video class="gallery-video" src="images/acc_poster_pitch.mp4" poster="images/acc_poster_pitch_poster.jpg" controls preload="metadata" playsinline></video>
+            <div class="gallery-video-item">
+              <span class="poster-gallery-label gallery-video-tag">Video</span>
+              <video class="gallery-video" src="images/acc_poster_pitch.mp4" poster="images/acc_poster_pitch_poster.jpg" controls preload="metadata" playsinline></video>
+            </div>
           </div>
           <div class="card-links">
             <a href="https://github.com/A51F09/grover-nisq-noise-study" target="_blank" rel="noopener noreferrer">GitHub Repo →</a>
