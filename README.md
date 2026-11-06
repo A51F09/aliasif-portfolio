@@ -42,7 +42,7 @@ Every placeholder is numbered so you can reference it directly (e.g. "fill in Pl
    - **Image Placeholder 1** (already filled) — CU Boulder research poster
    - **Image Placeholder 2** (already filled) — ACC quantum research poster
    - **Image Placeholder 3–8** — the six Gallery photos (any filenames you like)
-   - `Ali_Asif_Resume.pdf` is linked as text (Placeholder 22), not an image box — just drop the file in and the link will work once named correctly.
+   - The Resume section is currently removed (see [DEFERRED.md](DEFERRED.md)) — once it's back, `Ali_Asif_Resume.pdf` will be linked as text there, not an image box.
 
 ## 2. Previewing locally
 
@@ -122,7 +122,7 @@ aliasif-portfolio/
 ├── index.html          # the entire site
 ├── CNAME                # tells GitHub Pages the custom domain
 ├── images/              # put your images/screenshots/posters here (optional location)
-├── Ali_Asif_Resume.pdf   # add this yourself — linked from the Resume section
+├── Ali_Asif_Resume.pdf   # add this once the Resume section is restored (see DEFERRED.md)
 ├── DEFERRED.md           # content temporarily removed from the site, kept verbatim for later
 └── README.md            # this file
 ```
