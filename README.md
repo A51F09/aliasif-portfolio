@@ -2,12 +2,14 @@
 
 Portfolio site for Ali Asif. Single static page (`index.html`), no build step, no dependencies to install.
 
+**Note:** some sections (like Projects) are temporarily removed to get the site hosted quickly. See [DEFERRED.md](DEFERRED.md) for everything that's been taken out and exactly how to put it back.
+
 ## 1. Filling in your content
 
 Every placeholder is numbered so you can reference it directly (e.g. "fill in Placeholder 8" or "here's the file for Image Placeholder 3"). There are two kinds:
 
-- **`[PLACEHOLDER N - ...]`** — text: bios, descriptions, dates, links, tech-stack badges, captions. Numbered 1–33, in the order they appear on the page (a few numbers are already filled in and won't show as brackets anymore).
-- **`[IMAGE PLACEHOLDER N - ...]`** — a photo/screenshot/poster slot shown as a dashed box. Numbered 1–11, separately from the text ones.
+- **`[PLACEHOLDER N - ...]`** — text: bios, descriptions, dates, links, tech-stack badges, captions. Currently numbered 2, 16–23 (lower numbers are already filled in and won't show as brackets anymore — gaps are expected).
+- **`[IMAGE PLACEHOLDER N - ...]`** — a photo/screenshot/poster slot shown as a dashed box. Currently numbered 3–8, separately from the text ones (1 and 2 are already filled).
 
 1. Open `index.html` in any text editor.
 2. Press **Ctrl+F** and search for `PLACEHOLDER` to jump through every spot that needs real content, or just look for the placeholder number you're working on.
@@ -25,22 +27,10 @@ Every placeholder is numbered so you can reference it directly (e.g. "fill in Pl
    The lightbox itself (markup, CSS, and a small vanilla-JS script) is already wired up at the bottom of `index.html` — any `<img class="zoomable">` anywhere on the page gets the click-to-enlarge behavior automatically, no extra setup needed per image.
 
 3. What each image placeholder is for:
-   - **Image Placeholder 1** — `poster_cu.png`, CU Boulder research poster
-   - **Image Placeholder 2** — `poster_quantum.png`, ACC quantum research poster
-   - **Image Placeholder 3 / 4** — `athltc_1.png`, `athltc_2.png`, ATHLTC app screenshots
-   - **Image Placeholder 5** — second project's screenshot
-   - **Image Placeholder 6–11** — the six Gallery photos (any filenames you like)
-   - `Ali_Asif_Resume.pdf` is linked as text (Placeholder 32), not an image box — just drop the file in and the link will work once named correctly.
-
-### Showing/hiding the second project card
-
-The second project card (`id="project-card-b"` in the Projects section) is visible by default. To hide it until you're ready, add the class `project-hidden` to its `<article>` tag:
-
-```html
-<article class="card project-hidden" id="project-card-b">
-```
-
-To show it again, remove that class.
+   - **Image Placeholder 1** (already filled) — CU Boulder research poster
+   - **Image Placeholder 2** (already filled) — ACC quantum research poster
+   - **Image Placeholder 3–8** — the six Gallery photos (any filenames you like)
+   - `Ali_Asif_Resume.pdf` is linked as text (Placeholder 22), not an image box — just drop the file in and the link will work once named correctly.
 
 ## 2. Previewing locally
 
@@ -121,5 +111,6 @@ aliasif-portfolio/
 ├── CNAME                # tells GitHub Pages the custom domain
 ├── images/              # put your images/screenshots/posters here (optional location)
 ├── Ali_Asif_Resume.pdf   # add this yourself — linked from the Resume section
+├── DEFERRED.md           # content temporarily removed from the site, kept verbatim for later
 └── README.md            # this file
 ```
