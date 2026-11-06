@@ -427,6 +427,16 @@
     scroll-snap-align: start;
   }
 
+  .card-video {
+    display: block;
+    max-width: 260px;
+    width: 100%;
+    margin: 2px auto 0;
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    background: #000;
+  }
+
   /* ---------- LIGHTBOX ---------- */
   img.zoomable { cursor: zoom-in; }
 
@@ -579,7 +589,14 @@
           <h3>Comparing NISQ-Era Quantum Chip Architectures in Noisy Simulation of Grover's Algorithm</h3>
           <p class="card-subtitle">Arapahoe Community College — Independent Research</p>
           <p>This study investigates how noise in Noisy Intermediate-Scale Quantum (NISQ) systems affects the performance of Grover's algorithm, and whether that effect differs across qubit architectures. Using Qiskit Aer on Google Colab, a 3-qubit Grover's circuit was run across noiseless, trapped-ion, and neutral-atom simulation environments over five trials each. The trapped-ion model stayed within about 1% of the noiseless baseline, while the neutral-atom model's success rate dropped to roughly 40%, showing that noise resilience depends heavily on the underlying hardware.</p>
-          <img class="zoomable" src="images/poster_quantum.png" alt="Research poster: How Noise Affects Quantum Computing - Grover's Algorithm in NISQ Systems" loading="lazy" style="border-radius:10px;border:1px solid var(--color-border);">
+          <p class="poster-gallery-label">Gallery</p>
+          <div class="poster-gallery">
+            <img class="zoomable" data-group="acc-quantum" src="images/poster_quantum.png" alt="Research poster: How Noise Affects Quantum Computing - Grover's Algorithm in NISQ Systems" loading="lazy">
+            <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_1.png" alt="Ali Asif standing beside the quantum computing research poster" loading="lazy">
+            <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_2.png" alt="Ali Asif discussing the research with attendees at the symposium" loading="lazy">
+          </div>
+          <p class="poster-gallery-label">Video</p>
+          <video class="card-video" src="images/acc_poster_pitch.mp4" controls preload="metadata" playsinline></video>
           <div class="card-links">
             <a href="https://github.com/A51F09/grover-nisq-noise-study" target="_blank" rel="noopener noreferrer">GitHub Repo →</a>
           </div>
