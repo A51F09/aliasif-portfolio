@@ -1,4 +1,4 @@
-# aliasif.dev
+# aliasif.me
 
 Portfolio site for Ali Asif. Single static page (`index.html`), no build step, no dependencies to install.
 
@@ -65,21 +65,21 @@ Just double-click `index.html` to open it in your browser — no server required
 3. **Enable Pages:** In the repo, go to **Settings → Pages**. Under "Build and deployment", set Source to **Deploy from a branch**, branch `main`, folder `/ (root)`. Save.
 4. GitHub will build and publish the site at `https://<your-username>.github.io/<your-repo>/`. It can take a minute or two the first time.
 
-## 4. Connecting your custom domain (aliasif.dev)
+## 4. Connecting your custom domain (aliasif.me)
 
 You already own the domain. Two things need to happen: GitHub needs to know about the domain, and your domain registrar's DNS needs to point at GitHub.
 
 ### A. Tell GitHub about the domain
 
 1. In the repo, go to **Settings → Pages**.
-2. Under "Custom domain", enter `aliasif.dev` and click **Save**. GitHub will commit a `CNAME` file containing `aliasif.dev` to your repo root automatically (this repo already includes one, so this step just confirms it in the UI).
+2. Under "Custom domain", enter `aliasif.me` and click **Save**. GitHub will commit a `CNAME` file containing `aliasif.me` to your repo root automatically (this repo already includes one, so this step just confirms it in the UI).
 3. Leave this tab open — you'll come back to check "DNS check successful" after step B.
 
 ### B. Point your domain's DNS at GitHub Pages
 
-Log in to whichever registrar you bought the domain from (Porkbun, Namecheap, GoDaddy, etc. — the steps are the same idea everywhere, just in a different-looking dashboard). Find the **DNS records** or **DNS management** page for `aliasif.dev`.
+Log in to whichever registrar you bought the domain from (Porkbun, Namecheap, GoDaddy, etc. — the steps are the same idea everywhere, just in a different-looking dashboard). Find the **DNS records** or **DNS management** page for `aliasif.me`.
 
-You're setting up the **apex/root domain** (`aliasif.dev`, no `www`). Add these four **A records**, all with host/name left blank (or `@`):
+You're setting up the **apex/root domain** (`aliasif.me`, no `www`). Add these four **A records**, all with host/name left blank (or `@`):
 
 | Type | Host | Value           |
 |------|------|-----------------|
@@ -88,7 +88,7 @@ You're setting up the **apex/root domain** (`aliasif.dev`, no `www`). Add these 
 | A    | @    | 185.199.110.153 |
 | A    | @    | 185.199.111.153 |
 
-If you also want `www.aliasif.dev` to work and redirect to the apex domain, add one more record:
+If you also want `www.aliasif.me` to work and redirect to the apex domain, add one more record:
 
 | Type  | Host | Value                       |
 |-------|------|------------------------------|
@@ -96,7 +96,7 @@ If you also want `www.aliasif.dev` to work and redirect to the apex domain, add 
 
 **On Namecheap specifically:**
 
-1. Log in at [namecheap.com](https://namecheap.com), go to **Domain List**, and click **Manage** next to `aliasif.dev`.
+1. Log in at [namecheap.com](https://namecheap.com), go to **Domain List**, and click **Manage** next to `aliasif.me`.
 2. Open the **Advanced DNS** tab.
 3. Under **Host Records**, delete anything already there for the `@` host and `www` host (Namecheap often starts you with a "Parking Page" redirect — remove that first, or the new records will conflict).
 4. Click **Add New Record** four times and add the four A records above exactly as listed (Host `@`, Type `A Record`, Value one of the four IPs, TTL `Automatic`).
@@ -109,8 +109,8 @@ If you also want `www.aliasif.dev` to work and redirect to the apex domain, add 
 
 - DNS changes can take anywhere from a few minutes to ~24 hours to propagate.
 - Back in GitHub's **Settings → Pages**, you should eventually see "DNS check successful" next to your custom domain.
-- Once it does, check **Enforce HTTPS** so visitors get `https://aliasif.dev` with a valid certificate (GitHub issues this automatically via Let's Encrypt — can take a few more minutes after DNS verifies).
-- Visit `https://aliasif.dev` to confirm.
+- Once it does, check **Enforce HTTPS** so visitors get `https://aliasif.me` with a valid certificate (GitHub issues this automatically via Let's Encrypt — can take a few more minutes after DNS verifies).
+- Visit `https://aliasif.me` to confirm.
 
 ### Troubleshooting
 
@@ -119,7 +119,7 @@ If you also want `www.aliasif.dev` to work and redirect to the apex domain, add 
 - You can confirm propagation from your own machine with:
 
   ```bash
-  nslookup aliasif.dev
+  nslookup aliasif.me
   ```
 
   It should eventually return the four `185.199.10x.153` addresses.
