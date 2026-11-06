@@ -423,8 +423,7 @@
     padding-bottom: 4px;
   }
 
-  .poster-gallery img,
-  .poster-gallery video {
+  .poster-gallery img {
     flex: 0 0 auto;
     height: 150px;
     width: auto;
@@ -433,7 +432,15 @@
     scroll-snap-align: start;
   }
 
-  .poster-gallery video { background: #000; }
+  .poster-gallery video {
+    flex: 0 0 auto;
+    height: 150px;
+    width: 84px;
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    scroll-snap-align: start;
+    background: #000;
+  }
 
   /* ---------- LIGHTBOX ---------- */
   img.zoomable { cursor: zoom-in; }
