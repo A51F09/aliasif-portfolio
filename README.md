@@ -94,6 +94,15 @@ If you also want `www.aliasif.dev` to work and redirect to the apex domain, add 
 |-------|------|------------------------------|
 | CNAME | www  | `<your-username>.github.io` |
 
+**On Namecheap specifically:**
+
+1. Log in at [namecheap.com](https://namecheap.com), go to **Domain List**, and click **Manage** next to `aliasif.dev`.
+2. Open the **Advanced DNS** tab.
+3. Under **Host Records**, delete anything already there for the `@` host and `www` host (Namecheap often starts you with a "Parking Page" redirect — remove that first, or the new records will conflict).
+4. Click **Add New Record** four times and add the four A records above exactly as listed (Host `@`, Type `A Record`, Value one of the four IPs, TTL `Automatic`).
+5. Click **Add New Record** once more for `www`: Host `www`, Type `CNAME Record`, Value `<your-username>.github.io`, TTL `Automatic`.
+6. Click the green checkmark to save.
+
 **On Porkbun specifically:** go to your domain's **DNS** tab, delete any existing `A` or `ALIAS`/`CNAME` records on the root/`@` host that conflict, then add the records above one at a time using "Add Record".
 
 ### C. Wait and verify
