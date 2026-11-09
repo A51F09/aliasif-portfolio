@@ -900,34 +900,13 @@
       var lastPing = localStorage.getItem('visitPingSent');
       if (lastPing && (now - parseInt(lastPing, 10)) < COOLDOWN_MS) return;
 
-      var CLOUD_KEYWORDS = [
-        'amazon', 'aws', 'google', 'microsoft', 'azure', 'digitalocean', 'ovh',
-        'hetzner', 'cloudflare', 'linode', 'akamai', 'oracle', 'alibaba', 'tencent',
-        'vultr', 'contabo', 'leaseweb', 'choopa', 'm247', 'datacamp', 'fastly',
-        'rackspace', 'ibm cloud', 'scaleway', 'upcloud', 'hosting', 'colocation',
-        'datacenter', 'data center', 'server'
-      ];
-
-      function isLikelyBot(org, isp) {
-        var combined = ((org || '') + ' ' + (isp || '')).toLowerCase();
-        for (var i = 0; i < CLOUD_KEYWORDS.length; i++) {
-          if (combined.indexOf(CLOUD_KEYWORDS[i]) !== -1) return true;
-        }
-        return false;
-      }
-
       fetch('https://ipwho.is/')
         .then(function (res) { return res.json(); })
         .then(function (data) {
-          var conn = (data && data.connection) || {};
-          var isp = conn.isp || '';
-          var org = conn.org || '';
-
-          if (isLikelyBot(org, isp)) return null; // skip the ping, likely a bot/crawler/cloud server
-
           var city = (data && data.city) || 'Unknown city';
           var region = (data && data.region) || '';
           var country = (data && data.country) || '';
+          var isp = (data && data.connection && data.connection.isp) || '';
           var location = [city, region, country].filter(Boolean).join(', ');
           var message = 'New visitor from ' + location + (isp ? ' (' + isp + ')' : '');
 
