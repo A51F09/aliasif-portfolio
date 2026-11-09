@@ -891,5 +891,38 @@
   })();
 </script>
 
+<script>
+  (function () {
+    try {
+      var NTFY_TOPIC = 'aliasif-visits-d8d4c00a55';
+      var COOLDOWN_MS = 6 * 60 * 60 * 1000; // don't re-ping the same browser more than once per 6 hours
+      var now = Date.now();
+      var lastPing = localStorage.getItem('visitPingSent');
+      if (lastPing && (now - parseInt(lastPing, 10)) < COOLDOWN_MS) return;
+
+      fetch('https://ipwho.is/')
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          var city = (data && data.city) || 'Unknown city';
+          var region = (data && data.region) || '';
+          var country = (data && data.country) || '';
+          var isp = (data && data.connection && data.connection.isp) || '';
+          var location = [city, region, country].filter(Boolean).join(', ');
+          var message = 'New visitor from ' + location + (isp ? ' (' + isp + ')' : '');
+
+          return fetch('https://ntfy.sh/' + NTFY_TOPIC, {
+            method: 'POST',
+            headers: { 'Title': 'aliasif.me visit', 'Tags': 'eyes' },
+            body: message
+          });
+        })
+        .then(function () {
+          localStorage.setItem('visitPingSent', String(now));
+        })
+        .catch(function () { /* never let this break the page */ });
+    } catch (e) { /* no-op */ }
+  })();
+</script>
+
 </body>
 </html>
