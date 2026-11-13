@@ -16,7 +16,68 @@ Removed because the paper isn't written yet. To restore: drop the finished PDF i
 
 ## Restored 2026-11-13 — Projects section
 
-The Projects section (noted below as removed on 2026-11-06) is back, now with real ATHLTC content: full description, real tech stack badges, a link to athltc.app, and a status line. Only the 4 screenshot slots are still open (Image Placeholders 1-4) — drop in `athltc_1.png` through `athltc_4.png` (or however many you have) and swap each `img-placeholder` div for a real `<img class="zoomable" data-group="athltc" ...>` tag, same pattern used elsewhere on the site (see the README's "Adding images" section). The old generic "second project" card was dropped rather than restored — add a new card manually if/when there's a second project to show.
+The Projects section (noted below as removed on 2026-11-06) is back, fully built out with real ATHLTC content: a Gallery (6 real app screenshots pulled from athltc.app plus the team meetup photo), a Tools Used badge row, both description paragraphs, a status line, and a link to athltc.app. Card order top to bottom: role, Gallery, Tools Used, descriptions, status line, link. No placeholders left in this card. The old generic "second project" card was dropped rather than restored, add a new card manually if/when there's a second project to show.
+
+---
+
+## Removed 2026-11-13 — Site-wide Gallery section
+
+Removed for good (not a "ship faster" defer like the others below) — per-section galleries are the new pattern going forward instead of one consolidated gallery at the bottom of the page. The Research cards and the ATHLTC project already have their own galleries; Code Ninjas and Leadership are expected to get their own too eventually.
+
+The nav link that was removed:
+
+```html
+<a href="#gallery">Gallery</a>
+```
+
+The section itself, for reference (not meant to come back as-is):
+
+```html
+  <section id="gallery">
+    <div class="wrap">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+
+        <figure class="gallery-item">
+          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_cu_audience.png" alt="CU Symposium audience engagement" loading="lazy">
+          <figcaption>CU Symposium audience engagement</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_acc_pitch.png" alt="Pitching poster at ACC symposium" loading="lazy">
+          <figcaption>Pitching poster at ACC symposium</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_blankets.png" alt="Student council winter blanket project" loading="lazy">
+          <figcaption>Student council winter blanket project</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_minecraft_student.png" alt="Code Ninjas Minecraft modding student" loading="lazy">
+          <figcaption>Code Ninjas Minecraft modding student</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_cu_team.png" alt="Fellow research students at CU Boulder" loading="lazy">
+          <figcaption>Fellow research students at CU Boulder</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+```
+
+(The ATHLTC team meetup photo that was the 6th item here has already been moved into the ATHLTC project card's own gallery.)
+
+**Unused photos still sitting in `images/`, free to drop into a relevant section gallery later:**
+- `gallery_cu_audience.png` — CU Symposium audience engagement (candidate: CU Boulder research card gallery)
+- `gallery_acc_pitch.png` — Pitching poster at ACC symposium (candidate: ACC quantum research card gallery)
+- `gallery_blankets.png` — Student council winter blanket project (candidate: a future Leadership gallery)
+- `gallery_minecraft_student.png` — Code Ninjas Minecraft modding student (candidate: a future Code Ninjas gallery, see site-updates.md step 2)
+- `gallery_cu_team.png` — Fellow research students at CU Boulder (candidate: CU Boulder research card gallery)
+
+The CSS classes `.gallery-grid`, `.gallery-item`, `.gallery-photo` are still in `index.html`, unused but harmless, in case this pattern comes back.
 
 ---
 
