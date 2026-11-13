@@ -70,13 +70,28 @@ The section itself, for reference (not meant to come back as-is):
 
 (The ATHLTC team meetup photo that was the 6th item here has already been moved into the ATHLTC project card's own gallery.)
 
-**Placed 2026-11-13:** `gallery_cu_audience.png` and `gallery_cu_team.png` are now in the CU Boulder research card's gallery; `gallery_acc_pitch.png` is now in the ACC quantum research card's gallery.
+**Placed 2026-11-13:** `gallery_cu_audience.png` and `gallery_cu_team.png` are now in the CU Boulder research card's gallery; `gallery_acc_pitch.png` is now in the ACC quantum research card's gallery; `gallery_minecraft_student.png` is now in the Code Ninjas card's gallery (site-updates.md step 2, done).
 
 **Unused photos still sitting in `images/`, free to drop into a relevant section gallery later:**
 - `gallery_blankets.png` — Student council winter blanket project (candidate: a future Leadership gallery)
-- `gallery_minecraft_student.png` — Code Ninjas Minecraft modding student (candidate: a future Code Ninjas gallery, see site-updates.md step 2)
 
 The CSS classes `.gallery-grid`, `.gallery-item`, `.gallery-photo` are still in `index.html`, unused but harmless, in case this pattern comes back.
+
+---
+
+## Removed 2026-11-13 — Library Volunteer entry (site-updates.md step 3)
+
+Removed for good, per the spec: "the rest of the portfolio is strong enough that it reads as filler." Not expected to come back, but for the record, it was:
+
+```html
+<div class="timeline-item">
+  <h3>Library Volunteer, Castle Rock Library</h3>
+  <p class="timeline-meta">July 2024</p>
+  <p>Spent the summer volunteering at the Castle Rock Library, including teaching a LEGO building challenge summer camp.</p>
+</div>
+```
+
+The Experience section was also restructured at the same time: Code Ninjas moved out of the compact timeline-item format into a full card (matching Research/Projects), with its own 9-photo gallery, since it's now the only thing in that section.
 
 ---
 

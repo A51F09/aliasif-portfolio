@@ -678,7 +678,7 @@
             <span class="badge">Claude Code</span>
           </div>
           <p>As a multi-year user of MyFitnessPal, I've realized that the main purpose is to track nutrition and cardio. While these are critically important things to track, tracking progressive overload, sleep, and changing dietary patterns are just as crucial. That's why we created ATHLTC. The app logs lifts, meals, sleep, and steps in one place, with a full Ramadan mode that calculates suhoor and iftar times from your location, tracks a live fasting countdown, and adjusts your training window around the fast. Workouts can be built from a saved plan or imported straight from a text file, so logging a session is a tap, not a typing exercise. Everything ties to an account and syncs to a server, so your training history, meals, and sleep are there every time you sign back in.</p>
-          <p>Much of ATHLTC's code was written with AI assistance, but I made sure I understood the architecture behind every feature before putting my name on it. The frontend is a React 19 and TypeScript app built with Vite, styled with Tailwind CSS and driven by React Router, with prayer times and the Islamic calendar calculated directly on the device. The backend is a Node.js and Express server, also in TypeScript, backed by a SQLite database with versioned migrations, and every request is validated with Zod before it touches the database. Accounts use scrypt password hashing and random session tokens, and user API keys for the upcoming AI coach are encrypted at rest with AES-256-GCM before they're stored, though the server still has to decrypt the key when it actually needs to call Anthropic's API, so it isn't a zero-knowledge system. Apple Health imports work the same careful way: the full export is unzipped and parsed entirely in the browser, and only the daily totals, not the far more detailed raw data, ever reach the server. I'd rather build something I can explain line by line than something that just sounds good.</p>
+          <p>Much of ATHLTC's code was written with AI assistance, but I made sure I understood the architecture behind every feature before putting my name on it. The frontend is a React 19 and TypeScript app built with Vite, styled with Tailwind CSS and driven by React Router, with prayer times and the Islamic calendar calculated directly on the device. The backend is a Node.js and Express server, also in TypeScript, backed by a SQLite database with versioned migrations, and every request is validated with Zod before it touches the database. Accounts use scrypt password hashing and random session tokens, and user API keys for the upcoming AI coach are encrypted at rest with AES-256-GCM before they're stored, though the server still has to decrypt the key when it actually needs to call Anthropic's API, so it isn't a zero-knowledge system. Apple Health imports work similarly. The full export is unzipped and parsed entirely in the browser, and only the daily totals, not the far more detailed raw data, ever reach the server.</p>
           <p class="card-role" style="margin-top:4px;">Currently in development. Peer testing begins December 2026. A GitHub repository will be uploaded following the initial round of testing.</p>
           <div class="card-links">
             <a href="https://athltc.app" target="_blank" rel="noopener noreferrer">Visit our website →</a>
@@ -692,19 +692,27 @@
   <section id="experience">
     <div class="wrap">
       <h2>Experience</h2>
+      <div class="card-grid stacked">
 
-      <div class="timeline-item">
-        <h3>Sensei (Coding Instructor), Code Ninjas Castle Rock</h3>
-        <p class="timeline-meta">Promoted to Camp Director &middot; June 2025 – September 2026</p>
-        <p>Coached hundreds of kids ages 5–14 in game development using block coding, JavaScript, and robotics. Trained and led 4 interns and 4 camp assistants, teaching 4 summer camps and 2 winter camps across a 15-month tenure.</p>
+        <article class="card">
+          <h3>Code Ninjas Castle Rock — Coding Instructor &amp; Camp Director</h3>
+          <p class="card-subtitle">Promoted to Camp Director &middot; June 2025 – September 2026</p>
+          <p class="poster-gallery-label">Gallery</p>
+          <div class="poster-gallery">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_instructor_teaching.png" alt="Ali Asif talking with a student at a computer during class" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_classroom_wide.png" alt="Wide view of a full Code Ninjas classroom with kids working at laptops" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_robotics_group.png" alt="Four students holding robotics builds and tablets showing block code" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_classroom_building.png" alt="Students building with LEGO Spike robotics kits during class" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_spike_build.png" alt="A student working on a LEGO Spike robotics build with an iPad showing block code" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_robot_build.png" alt="A student holding up a tall LEGO robotics build" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_microbit_bracelets.png" alt="Two students showing off micro:bit wristband projects" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/gallery_minecraft_student.png" alt="A student working on a Minecraft modding project" loading="lazy">
+            <img class="zoomable" data-group="code-ninjas" src="images/codeninjas_students_peace.png" alt="Two students at camp, one giving a peace sign" loading="lazy">
+          </div>
+          <p>As a coding instructor and later Camp Director at Code Ninjas Castle Rock, I taught kids ages 5 to 14 across every skill level, from block coding and LEGO Mindstorms robotics for the youngest beginners to JavaScript, Lua, Java, and C# for more advanced students building their own games. I trained and led a team of 4 interns and 4 camp assistants, running 4 summer camps and 2 winter camps across a 15-month tenure.</p>
+        </article>
+
       </div>
-
-      <div class="timeline-item">
-        <h3>Library Volunteer, Castle Rock Library</h3>
-        <p class="timeline-meta">July 2024</p>
-        <p>Spent the summer volunteering at the Castle Rock Library, including teaching a LEGO building challenge summer camp.</p>
-      </div>
-
     </div>
   </section>
 
