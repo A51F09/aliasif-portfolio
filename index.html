@@ -565,7 +565,6 @@
       <a href="#experience">Experience</a>
       <a href="#leadership">Leadership</a>
       <a href="#skills">Skills</a>
-      <a href="#gallery">Gallery</a>
     </div>
   </div>
 </nav>
@@ -653,8 +652,17 @@
         <article class="card">
           <h3>ATHLTC</h3>
           <p class="card-role">Co-founder &amp; Lead Developer</p>
-          <p>As a multi-year user of MyFitnessPal, I've realized that the main purpose is to track nutrition and cardio. While these are critically important things to track, tracking progressive overload, sleep, and changing dietary patterns are just as crucial. That's why we created ATHLTC. The app logs lifts, meals, sleep, and steps in one place, with a full Ramadan mode that calculates suhoor and iftar times from your location, tracks a live fasting countdown, and adjusts your training window around the fast. Workouts can be built from a saved plan or imported straight from a text file, so logging a session is a tap, not a typing exercise. Everything ties to an account and syncs to a server, so your training history, meals, and sleep are there every time you sign back in.</p>
-          <p>Much of ATHLTC's code was written with AI assistance, but I made sure I understood the architecture behind every feature before putting my name on it. The frontend is a React 19 and TypeScript app built with Vite, styled with Tailwind CSS and driven by React Router, with prayer times and the Islamic calendar calculated directly on the device. The backend is a Node.js and Express server, also in TypeScript, backed by a SQLite database with versioned migrations, and every request is validated with Zod before it touches the database. Accounts use scrypt password hashing and random session tokens, and user API keys for the upcoming AI coach are encrypted at rest with AES-256-GCM before they're stored, though the server still has to decrypt the key when it actually needs to call Anthropic's API, so it isn't a zero-knowledge system. Apple Health imports work the same careful way: the full export is unzipped and parsed entirely in the browser, and only the daily totals, not the far more detailed raw data, ever reach the server. I'd rather build something I can explain line by line than something that just sounds good.</p>
+          <p class="poster-gallery-label">Gallery</p>
+          <div class="poster-gallery">
+            <img class="zoomable" data-group="athltc" src="images/athltc_summary-training.jpg" alt="Summary screen showing today's calories, sleep and steps, a 3 day streak, and personal records for main lifts" loading="lazy">
+            <img class="zoomable" data-group="athltc" src="images/athltc_summary-ramadan.jpg" alt="Summary screen with a Ramadan card showing day 7 of 30, a live fasting countdown, and suhoor/iftar times" loading="lazy">
+            <img class="zoomable" data-group="athltc" src="images/athltc_workout.jpg" alt="Active workout screen with bench press and overhead press sets, weight and rep fields" loading="lazy">
+            <img class="zoomable" data-group="athltc" src="images/athltc_nutrition.jpg" alt="Nutrition screen with calories, macro totals, and Suhoor/Iftar meal entries" loading="lazy">
+            <img class="zoomable" data-group="athltc" src="images/athltc_sleep.jpg" alt="Sleep screen with a seven day bar chart against a nightly goal" loading="lazy">
+            <img class="zoomable" data-group="athltc" src="images/athltc_settings.jpg" alt="Settings screen with account, theme, accent color, and AI coach API key field" loading="lazy">
+            <img class="zoomable" data-group="athltc" src="images/gallery_athltc_meetup.png" alt="Ali Asif and the ATHLTC team working together on the app" loading="lazy">
+          </div>
+          <p class="poster-gallery-label">Tools Used</p>
           <div class="badges">
             <span class="badge">React</span>
             <span class="badge">TypeScript</span>
@@ -665,28 +673,11 @@
             <span class="badge">SQLite</span>
             <span class="badge">Zod</span>
           </div>
-          <p class="poster-gallery-label">Screenshots</p>
-          <div class="screenshot-row">
-            <div class="img-placeholder" role="img" aria-label="Image placeholder 1: ATHLTC screenshot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
-              [IMAGE PLACEHOLDER 1]
-            </div>
-            <div class="img-placeholder" role="img" aria-label="Image placeholder 2: ATHLTC screenshot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
-              [IMAGE PLACEHOLDER 2]
-            </div>
-            <div class="img-placeholder" role="img" aria-label="Image placeholder 3: ATHLTC screenshot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
-              [IMAGE PLACEHOLDER 3]
-            </div>
-            <div class="img-placeholder" role="img" aria-label="Image placeholder 4: ATHLTC screenshot">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5-4 4-2-2-5 5"/></svg>
-              [IMAGE PLACEHOLDER 4]
-            </div>
-          </div>
-          <p class="card-role" style="margin-top:4px;">Currently in development. Peer testing begins December 2026.</p>
+          <p>As a multi-year user of MyFitnessPal, I've realized that the main purpose is to track nutrition and cardio. While these are critically important things to track, tracking progressive overload, sleep, and changing dietary patterns are just as crucial. That's why we created ATHLTC. The app logs lifts, meals, sleep, and steps in one place, with a full Ramadan mode that calculates suhoor and iftar times from your location, tracks a live fasting countdown, and adjusts your training window around the fast. Workouts can be built from a saved plan or imported straight from a text file, so logging a session is a tap, not a typing exercise. Everything ties to an account and syncs to a server, so your training history, meals, and sleep are there every time you sign back in.</p>
+          <p>Much of ATHLTC's code was written with AI assistance, but I made sure I understood the architecture behind every feature before putting my name on it. The frontend is a React 19 and TypeScript app built with Vite, styled with Tailwind CSS and driven by React Router, with prayer times and the Islamic calendar calculated directly on the device. The backend is a Node.js and Express server, also in TypeScript, backed by a SQLite database with versioned migrations, and every request is validated with Zod before it touches the database. Accounts use scrypt password hashing and random session tokens, and user API keys for the upcoming AI coach are encrypted at rest with AES-256-GCM before they're stored, though the server still has to decrypt the key when it actually needs to call Anthropic's API, so it isn't a zero-knowledge system. Apple Health imports work the same careful way: the full export is unzipped and parsed entirely in the browser, and only the daily totals, not the far more detailed raw data, ever reach the server. I'd rather build something I can explain line by line than something that just sounds good.</p>
+          <p class="card-role" style="margin-top:4px;">Currently in development. Peer testing begins December 2026. A GitHub repository will be uploaded following the initial round of testing.</p>
           <div class="card-links">
-            <a href="https://athltc.app" target="_blank" rel="noopener noreferrer">Visit athltc.app →</a>
+            <a href="https://athltc.app" target="_blank" rel="noopener noreferrer">Visit our website →</a>
           </div>
         </article>
 
@@ -797,45 +788,6 @@
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <section id="gallery">
-    <div class="wrap">
-      <h2>Gallery</h2>
-      <div class="gallery-grid">
-
-        <figure class="gallery-item">
-          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_cu_audience.png" alt="CU Symposium audience engagement" loading="lazy">
-          <figcaption>CU Symposium audience engagement</figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_acc_pitch.png" alt="Pitching poster at ACC symposium" loading="lazy">
-          <figcaption>Pitching poster at ACC symposium</figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_blankets.png" alt="Student council winter blanket project" loading="lazy">
-          <figcaption>Student council winter blanket project</figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_minecraft_student.png" alt="Code Ninjas Minecraft modding student" loading="lazy">
-          <figcaption>Code Ninjas Minecraft modding student</figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_cu_team.png" alt="Fellow research students at CU Boulder" loading="lazy">
-          <figcaption>Fellow research students at CU Boulder</figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <img class="zoomable gallery-photo" data-group="site-gallery" src="images/gallery_athltc_meetup.png" alt="ATHLTC app team meetup" loading="lazy">
-          <figcaption>ATHLTC app team meetup</figcaption>
-        </figure>
-
-      </div>
     </div>
   </section>
 
