@@ -70,12 +70,11 @@ The section itself, for reference (not meant to come back as-is):
 
 (The ATHLTC team meetup photo that was the 6th item here has already been moved into the ATHLTC project card's own gallery.)
 
+**Placed 2026-11-13:** `gallery_cu_audience.png` and `gallery_cu_team.png` are now in the CU Boulder research card's gallery; `gallery_acc_pitch.png` is now in the ACC quantum research card's gallery.
+
 **Unused photos still sitting in `images/`, free to drop into a relevant section gallery later:**
-- `gallery_cu_audience.png` — CU Symposium audience engagement (candidate: CU Boulder research card gallery)
-- `gallery_acc_pitch.png` — Pitching poster at ACC symposium (candidate: ACC quantum research card gallery)
 - `gallery_blankets.png` — Student council winter blanket project (candidate: a future Leadership gallery)
 - `gallery_minecraft_student.png` — Code Ninjas Minecraft modding student (candidate: a future Code Ninjas gallery, see site-updates.md step 2)
-- `gallery_cu_team.png` — Fellow research students at CU Boulder (candidate: CU Boulder research card gallery)
 
 The CSS classes `.gallery-grid`, `.gallery-item`, `.gallery-photo` are still in `index.html`, unused but harmless, in case this pattern comes back.
 

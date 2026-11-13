@@ -610,6 +610,8 @@
             <img class="zoomable" data-group="cu-boulder" src="images/cu_gallery_1.png" alt="Ali Asif with research team, holding award certificates at the symposium" loading="lazy">
             <img class="zoomable" data-group="cu-boulder" src="images/cu_gallery_2.png" alt="Ali Asif presenting the research poster to a visitor" loading="lazy">
             <img class="zoomable" data-group="cu-boulder" src="images/cu_gallery_3.png" alt="Ali Asif with the full research team group photo" loading="lazy">
+            <img class="zoomable" data-group="cu-boulder" src="images/gallery_cu_audience.png" alt="CU Symposium audience engagement" loading="lazy">
+            <img class="zoomable" data-group="cu-boulder" src="images/gallery_cu_team.png" alt="Fellow research students at CU Boulder" loading="lazy">
           </div>
           <div class="card-links">
             <a href="https://scholar.colorado.edu/concern/presentations/fx719p38s" target="_blank" rel="noopener noreferrer">View Publication →</a>
@@ -628,6 +630,7 @@
                 <img class="zoomable" data-group="acc-quantum" src="images/poster_quantum.png" alt="Research poster: How Noise Affects Quantum Computing - Grover's Algorithm in NISQ Systems" loading="lazy">
                 <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_1.png" alt="Ali Asif standing beside the quantum computing research poster" loading="lazy">
                 <img class="zoomable" data-group="acc-quantum" src="images/acc_gallery_2.png" alt="Ali Asif discussing the research with attendees at the symposium" loading="lazy">
+                <img class="zoomable" data-group="acc-quantum" src="images/gallery_acc_pitch.png" alt="Pitching poster at ACC symposium" loading="lazy">
               </div>
             </div>
             <div class="gallery-group-item">
@@ -672,6 +675,7 @@
             <span class="badge">Express</span>
             <span class="badge">SQLite</span>
             <span class="badge">Zod</span>
+            <span class="badge">Claude Code</span>
           </div>
           <p>As a multi-year user of MyFitnessPal, I've realized that the main purpose is to track nutrition and cardio. While these are critically important things to track, tracking progressive overload, sleep, and changing dietary patterns are just as crucial. That's why we created ATHLTC. The app logs lifts, meals, sleep, and steps in one place, with a full Ramadan mode that calculates suhoor and iftar times from your location, tracks a live fasting countdown, and adjusts your training window around the fast. Workouts can be built from a saved plan or imported straight from a text file, so logging a session is a tap, not a typing exercise. Everything ties to an account and syncs to a server, so your training history, meals, and sleep are there every time you sign back in.</p>
           <p>Much of ATHLTC's code was written with AI assistance, but I made sure I understood the architecture behind every feature before putting my name on it. The frontend is a React 19 and TypeScript app built with Vite, styled with Tailwind CSS and driven by React Router, with prayer times and the Islamic calendar calculated directly on the device. The backend is a Node.js and Express server, also in TypeScript, backed by a SQLite database with versioned migrations, and every request is validated with Zod before it touches the database. Accounts use scrypt password hashing and random session tokens, and user API keys for the upcoming AI coach are encrypted at rest with AES-256-GCM before they're stored, though the server still has to decrypt the key when it actually needs to call Anthropic's API, so it isn't a zero-knowledge system. Apple Health imports work the same careful way: the full export is unzipped and parsed entirely in the browser, and only the daily totals, not the far more detailed raw data, ever reach the server. I'd rather build something I can explain line by line than something that just sounds good.</p>
@@ -763,6 +767,7 @@
           <span class="badge">Jupyter Notebooks</span>
           <span class="badge">GitHub</span>
           <span class="badge">VS Code</span>
+          <span class="badge">Claude Code</span>
         </div>
       </div>
 
